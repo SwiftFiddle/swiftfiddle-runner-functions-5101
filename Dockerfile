@@ -4,7 +4,6 @@ FROM swift:5.10.1-jammy
 WORKDIR /app
 
 COPY ./_Packages/ ./swiftfiddle.com/_Packages/
-RUN rm -rf LICENSE README.md ./_Packages/ 
 RUN cd ./swiftfiddle.com/_Packages/ \
     && swift build -c release \
     && rm -rf .build/repositories/
